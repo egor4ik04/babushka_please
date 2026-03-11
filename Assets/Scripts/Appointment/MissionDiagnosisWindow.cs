@@ -10,7 +10,7 @@ public class MissionDiagnosisWindow : MonoBehaviour, IPointerClickHandler
 {
     [Header("Data")]
     [SerializeField] private MissionsSO missionsSO;
-    [SerializeField] private int missionId;
+    [SerializeField] public int missionId;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI problemText;

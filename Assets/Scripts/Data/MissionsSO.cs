@@ -11,6 +11,7 @@ public class MissionsSO : ScriptableObject
 public class Mission
 {
     public int Id;
+    [TextArea]
     public string ProblemText;
     public List<Disease> PossibleDiseases;
     public List<Verdict> VerdictList;
