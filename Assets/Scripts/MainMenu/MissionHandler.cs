@@ -24,4 +24,11 @@ public class MissionHandler : SingletonMonobehaviour<MissionHandler>
             missionWindow.missionId = s_currentMissionIndex;
         }
     }
+
+    public void LoadMainMenuScene() => LoadScene("MainMenu");
+    public void LoadMissionScene() => LoadScene("Appointment");
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

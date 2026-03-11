@@ -236,6 +236,10 @@ public class MissionDiagnosisWindow : MonoBehaviour, IPointerClickHandler
         }
 
         //—юда запихнуть реакцию на какую-то болезнь
+        var verdict = spawnedVerdictButtons[diseaseId];
+        verdict.image.color = disease.IsRight ? new Color(0, 0.8773585f, 0.2685665f) : Color.darkRed;
+        verdict.GetComponentInChildren<TMP_Text>().color = Color.white;
+
     }
 
     private void ClearVerdictButtons()
@@ -253,4 +257,6 @@ public class MissionDiagnosisWindow : MonoBehaviour, IPointerClickHandler
     {
         return Regex.Replace(input, "<.*?>", string.Empty);
     }
+
+    public void ToMainMenu() => FindAnyObjectByType<MissionHandler>().LoadMainMenuScene();
 }
