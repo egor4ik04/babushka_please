@@ -13,6 +13,8 @@ public class Mission
     public int Id;
     [TextArea]
     public string ProblemText;
+    [TextArea]
+    public string CharecterInfoText;
     public List<Disease> PossibleDiseases;
     public List<Verdict> VerdictList;
 }

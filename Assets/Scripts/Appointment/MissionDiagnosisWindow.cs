@@ -14,6 +14,7 @@ public class MissionDiagnosisWindow : MonoBehaviour, IPointerClickHandler
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI problemText;
+    [SerializeField] private TextMeshProUGUI infoText;
     [SerializeField] private TextMeshProUGUI notebookText;
     [SerializeField] private Transform verdictButtonsRoot;
     [SerializeField] private Button verdictButtonPrefab;
@@ -51,6 +52,7 @@ public class MissionDiagnosisWindow : MonoBehaviour, IPointerClickHandler
         originalProblemText = currentMission.ProblemText;
 
         RefreshProblemText();
+        RefreshInfoText();
         RefreshNotebook();
         RefreshVerdicts();
     }
@@ -120,6 +122,16 @@ public class MissionDiagnosisWindow : MonoBehaviour, IPointerClickHandler
         );
 
         problemText.text = result;
+    }
+
+    private void RefreshInfoText()
+    {
+        if (currentMission == null)
+        {
+            infoText.text = "";
+            return;
+        }
+        infoText.text = currentMission.CharecterInfoText;
     }
 
     private void RefreshNotebook()
